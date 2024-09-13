@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
- 
+use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +23,9 @@ Route::post('/posts/insert', [PostController::class, 'insert'])->name('posts.ins
 Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');
 Route::post('/posts/update/{id}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('/posts/delete/{id}', [PostController::class, 'delete'])->name('posts.delete');
-
 });
+// Comment
+Route::post('posts/comments',[CommentController::class,'store'])->name('posts.comments');
+
+
 

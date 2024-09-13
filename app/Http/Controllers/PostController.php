@@ -8,12 +8,16 @@ use App\Models\Post;
 class PostController extends Controller
 {
     public function index()
-    {
-        $posts = Post::all();
-        return view('index', compact('posts'));
-    }
+{
+   $posts = Post::with(['comments' => function($query) {
+        $query->orderBy('created_at', 'desc');
+    }, 'comments.user'])
+    ->orderBy('created_at', 'desc')
+    ->get();
 
-    public function create()
+    return view('index', compact('posts'));
+}
+   public function create()
     {
         return view('createpost');
     }

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4 text-primary">Login</h1>
+        <h1 class="text-center mb-4 text-success">Login</h1>
 
         @if (session('error'))
         <div class="alert alert-danger">
@@ -21,7 +21,7 @@
             @csrf
 
             <div class="form-group">
-                <label for="email"><b>Email</b></label>
+                <label for="email"><b class="text-info">Email</b></label>
                 <input id="email" type="text" name="email" value="{{ old('email') }}" class="form-control" autofocus>
                 @error('email')
                     <div class="text-danger">{{ $message }}</div>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="form-group">
-                <label for="password"><b>Password</b></label>
+                <label for="password"><b class="text-info">Password</b></label>
                 <input id="password" type="password" name="password" class="form-control">
                 @error('password')
                     <div class="text-danger">{{ $message }}</div>

@@ -30,7 +30,7 @@ class UserController extends Controller
         $user->password = Hash::make($request->password); 
         $user->save();
 
-        return redirect()->route('register')->with('success', 'Registered successfully.');
+        return redirect()->route('register')->with('success', 'Registered successfully back to login.');
     }
 
     public function loginForm()

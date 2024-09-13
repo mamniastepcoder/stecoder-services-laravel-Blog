@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4 text-danger">New Registration</h1>
+        <h1 class="text-center mb-4 text-success">New Registration</h1>
           @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -22,7 +22,7 @@
             @csrf
 
             <div class="form-group">
-                <label for="name"><b>Name</b></label>
+                <label for="name"><b class="text-info">Name</b></label>
                 <input id="name" type="text" name="name" value="{{ old('name') }}" class="form-control" autofocus>
                 @error('name')
                     <div class="text-danger">{{ $message }}</div>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-group">
-                <label for="email"><b>Email</b></label>
+                <label for="email"><b class="text-info">Email</b></label>
                 <input id="email" type="text" name="email" value="{{ old('email') }}" class="form-control">
                 @error('email')
                     <div class="text-danger">{{ $message }}</div>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="form-group">
-                <label for="password"><b>Password</b></label>
+                <label for="password"><b class="text-info">Password</b></label>
                 <input id="password" type="password" value="{{ old('password') }}" name="password" class="form-control">
                 @error('password')
                     <div class="text-danger">{{ $message }}</div>
@@ -46,7 +46,7 @@
             </div>
 
             <div class="form-group">
-                <label for="password_confirmation"><b>Confirm Password</b></label>
+                <label for="password_confirmation"><b class="text-info">Confirm Password</b></label>
                 <input id="password_confirmation" type="password" value="{{ old('password_confirmation') }}" name="password_confirmation" class="form-control">
                  @error('password_confirmation')
                     <div class="text-danger">{{ $message }}</div>
