@@ -11,6 +11,8 @@
 
         @auth
             <a href="{{ route('posts.create') }}" class="btn btn-success mb-3 float-right mr-5 mt-3">Create New Post</a>
+             <a href="{{ route('api-data') }}" class=" mb-3 float-right mr-5 mt-3">Api Data Fetch</a>
+              <a href="{{ route('books-search') }}" class=" mb-3 float-right mr-5 mt-3">Books List</a>
             <a href="{{ route('logout') }}" class="btn btn-secondary mb-3 mt-3" title="Logout">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
