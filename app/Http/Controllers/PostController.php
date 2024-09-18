@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -10,12 +8,12 @@ class PostController extends Controller
     public function index()
 {
    $posts = Post::with(['comments' => function($query) {
-        $query->orderBy('created_at', 'desc');
+           $query->orderBy('created_at', 'desc');
     }, 'comments.user'])
     ->orderBy('created_at', 'desc')
     ->get();
-
-    return view('index', compact('posts'));
+    
+  return view('index', compact('posts'));
 }
    public function create()
     {
@@ -29,7 +27,6 @@ class PostController extends Controller
             'title' => 'required|string',
             'content' => 'required|string',
         ]);
-
         $post = new Post;
         $post->author_name = $request->author_name;
         $post->title = $request->title;
@@ -54,13 +51,11 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $post = Post::find($id);
-
         $request->validate([
             'author_name' => 'required|string',
             'title' => 'required|string',
             'content' => 'required|string',
         ]);
-
         $post->author_name = $request->author_name;
         $post->title = $request->title;
         $post->content = $request->content;
