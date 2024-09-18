@@ -12,8 +12,7 @@ class PostController extends Controller
     }, 'comments.user'])
     ->orderBy('created_at', 'desc')
     ->get();
-    
-  return view('index', compact('posts'));
+    return view('index', compact('posts'));
 }
    public function create()
     {
@@ -32,7 +31,6 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->save();
-
         return redirect()->route('posts')->with('success', 'Your post has been added successfully.');
     }
 
@@ -60,7 +58,6 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->save();
-
         return redirect()->route('posts')->with('success', 'Your post has been updated successfully.');
     }
 
@@ -68,7 +65,6 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
-
         return redirect()->route('posts')->with('success', 'Your post has been deleted successfully.');
     }
 }
