@@ -8,7 +8,6 @@
 <body>
     <div class="container">
         <h1 class="mt-4 text-center  p-3 mb-2 bg-info text-white">All Blog Posts</h1>
-
         @auth
             <a href="{{ route('posts.create') }}" class="btn btn-success mb-3 float-right mr-5 mt-3">Create New Post</a>
              <a href="{{ route('api-data') }}" class=" mb-3 float-right mr-5 mt-3">Api Data Fetch</a>
@@ -17,32 +16,26 @@
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         @endauth
-
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
         @endif
-
         @if (session('error'))
             <div class="alert alert-danger">
                 {{ session('error') }}
             </div>
         @endif
-
         @guest
             <a href="{{ route('login') }}" class="btn btn-secondary btn-sm text-center mt-3 text-white">Back to Login</a>
         @endguest
-
         <div class="list-group mt-4">
             @foreach ($posts as $post)
                 <div class="list-group-item mt-2">
                     <h3 class="text-success">Title</h3>
                     <h5 class="mb-1">{{ $post->title }}</h5>
-
                     <a href="{{ route('posts.view', $post->id) }}" class="btn btn-info btn-sm mt-3"> <i class="fas fa-eye"></i>
                     </a>
-
                     @auth
                         <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning btn-sm mt-3 ml-2">
                             <i class="fas fa-edit"></i>
@@ -53,7 +46,6 @@
                             <button type="submit" class="btn btn-danger btn-sm mt-3 ml-2"><i class="fas fa-trash"></i></button>
                         </form>
                     @endauth
-
                     <h4 class=" text-danger mt-4">Comment</h4>
                     @auth
                         <div class="mb-4">
@@ -68,7 +60,7 @@
                                 </div>
                                 <div class="form-group">
                                     <select name="visibility" class="form-control w-50" id="visibility">
-                                        <option value="public">Visibility</option>
+                                        <option >Select Visibility</option>
                                         <option value="public">Public</option>
                                         <option value="private">Private</option>
                                     </select>
@@ -89,7 +81,6 @@
                     @empty
                         <p>No comments yet.</p>
                     @endforelse
-
                 </div>
             @endforeach
         </div>
