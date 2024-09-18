@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-
-
 class UserController extends Controller
 {
     public function register()
@@ -23,7 +21,6 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
         ]);
-
         $user = new User; 
         $user->name = $request->name;
         $user->email = $request->email;
@@ -44,9 +41,7 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
         $credentials = $request->only('email', 'password');
-
         if (Auth::attempt($credentials)) {
             return redirect()->route('posts');
         }
