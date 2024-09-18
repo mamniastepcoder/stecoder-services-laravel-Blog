@@ -26,7 +26,6 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password); 
         $user->save();
-
         return redirect()->route('register')->with('success', 'Registered successfully back to login.');
     }
 
@@ -45,7 +44,6 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->route('posts');
         }
-
         return redirect()->back()->with('error', 'Invalid credentials');
     }
 
