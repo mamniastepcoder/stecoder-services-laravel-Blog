@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -18,7 +17,6 @@ class BookController extends Controller
                 $books = $response->json('docs');
             }
         }
-
         return view('api.booksearch', compact('books', 'search'));
 }
 }
