@@ -8,7 +8,6 @@
 </head>
 <body>
 <div class="container">
-     
     <div class="mt-4">
   <h1 class="text-center bg-info text-white p-2 ">API Data Fetch</h1> 
         <table class="table table-bordered mt-4">
@@ -35,6 +34,5 @@
         </table>
     </div>
 </div>
-
 </body>
 </html>
