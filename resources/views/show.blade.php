@@ -23,8 +23,7 @@
                 </tr>
             </tbody>
         </table>
-        
-        <a href="{{ route('posts') }}" class="btn btn-secondary">Back to Posts</a>
+      <a href="{{ route('posts') }}" class="btn btn-secondary">Back to Posts</a>
     </div>
 </body>
 </html>
