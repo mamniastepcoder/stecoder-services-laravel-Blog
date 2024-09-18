@@ -18,7 +18,6 @@ class CommentController extends Controller
          $comment->user_id = Auth()->id();
          $comment->visibility = $request->input('visibility');
          $comment->save();
-        
-         return redirect()->back()->with('success','Your comment add successfully');
+        return redirect()->back()->with('success','Your comment add successfully');
  }
 }
