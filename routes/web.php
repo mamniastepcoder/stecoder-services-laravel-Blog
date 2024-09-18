@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -7,7 +6,6 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ApiFetchController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookSearchController;
-
 
 Route::get('/', function () {
     return view('welcome');
