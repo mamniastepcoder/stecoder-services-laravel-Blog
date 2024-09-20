@@ -1,7 +1,9 @@
+
 @extends('layouts.app')
 @section('content')
-<div>
-  <div class="mt-4">
+
+ <div class="mt-4">
+
   <h1 class="text-center bg-info text-white p-2 ">API Data Fetch</h1> 
    <a href="{{ route('posts') }}" class="btn btn-danger text-center text-white float-right">Back</a>
         <table class="table table-bordered mt-5">
@@ -34,5 +36,6 @@
  </div>
  
 </div>
+
 
 @endsection

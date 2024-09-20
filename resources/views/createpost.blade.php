@@ -11,8 +11,7 @@
             <div class="text-danger">{{$message}}</div>
             @enderror
             </div>
-          
-            <div class="form-group">
+          <div class="form-group">
                 <label for="title"><b class="text-info">Title</b></label>
                 <input type="text" class="form-control"  name="title" >
                    @error('title')
@@ -26,7 +25,6 @@
             <div class="text-danger">{{$message}}</div>
             @enderror
             </div>
-           
             <button type="submit" class="btn btn-success">submit</button>
              <a href="{{ route('posts') }}" class="btn btn-secondary">Back to Posts</a>
         </form>

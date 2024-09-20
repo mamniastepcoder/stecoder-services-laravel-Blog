@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Http;
 
 class BookController extends Controller
 {
+
    public function search(Request $request)
 {
     $search = $request->input('search', '');

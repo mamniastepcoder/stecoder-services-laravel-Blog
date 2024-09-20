@@ -1,15 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Comment;
 
-
 class CommentController extends Controller
 {
-
     public function store(Request $request)
     {
          $request->validate([
@@ -22,8 +18,6 @@ class CommentController extends Controller
          $comment->user_id = Auth()->id();
          $comment->visibility = $request->input('visibility');
          $comment->save();
-         return redirect()->back()->with('success','Your comment add successfully');
-
-
-    }
+        return redirect()->back()->with('success','Your comment add successfully');
+ }
 }

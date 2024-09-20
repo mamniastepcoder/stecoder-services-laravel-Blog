@@ -9,31 +9,29 @@
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         @endauth
-       @if (session('success'))
+
+
+        @if (session('success'))
+
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
         @endif
-
         @if (session('error'))
             <div class="alert alert-danger">
                 {{ session('error') }}
             </div>
         @endif
-
         @guest
             <a href="{{ route('login') }}" class="btn btn-secondary btn-sm text-center mt-3 text-white">Back to Login</a>
         @endguest
-
         <div class="list-group mt-4">
             @foreach ($posts as $post)
                 <div class="list-group-item mt-2">
                     <h3 class="text-success">Title</h3>
                     <h5 class="mb-1">{{ $post->title }}</h5>
-
                     <a href="{{ route('posts.view', $post->id) }}" class="btn btn-info btn-sm mt-3"> <i class="fas fa-eye"></i>
                     </a>
-
                     @auth
                         <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning btn-sm mt-3 ml-2">
                             <i class="fas fa-edit"></i>
@@ -44,7 +42,6 @@
                             <button type="submit" class="btn btn-danger btn-sm mt-3 ml-2"><i class="fas fa-trash"></i></button>
                         </form>
                     @endauth
-
                     <h4 class=" text-danger mt-4">Comment</h4>
                     @auth
                         <div class="mb-4">
@@ -80,7 +77,6 @@
                     @empty
                         <p>No comments yet.</p>
                     @endforelse
-
                 </div>
             @endforeach
         </div>

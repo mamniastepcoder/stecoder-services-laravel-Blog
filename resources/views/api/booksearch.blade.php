@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('content')
 <div>
@@ -27,9 +28,6 @@
         <a href="{{ route('books-search') }}" class="btn btn-secondary mt-3 ml-2">Reset Filter</a>
           <a href="{{ route('posts') }}" class="btn btn-danger text-center mt-3 text-white float-right">Back</a>
     </form>
-
-          
-       
 
     @if (isset($books) && count($books) > 0)
         <table class="table table-striped">

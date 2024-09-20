@@ -25,12 +25,15 @@ Route::post('/posts/insert', [PostController::class, 'insert'])->name('posts.ins
 Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');
 Route::post('/posts/update/{id}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('/posts/delete/{id}', [PostController::class, 'delete'])->name('posts.delete');
-});
-// Comment
-Route::post('posts/comments',[CommentController::class,'store'])->name('posts.comments');
 // api fetch data
 Route::get('api-data',[ApiController::class,'index'])->name('api-data');
 Route::get('books-search', [BookController::class, 'search'])->name('books-search');
+// / Comment
+Route::post('posts/comments',[CommentController::class,'store'])->name('posts.comments');
+});
+
+
+
 
 
 
