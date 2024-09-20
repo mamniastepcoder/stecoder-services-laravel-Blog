@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Blog Posts</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <div class="container">
+@extends('layouts.app')
+@section('content')
         <h1 class="mt-4 text-center  p-3 mb-2 bg-info text-white">All Blog Posts</h1>
-
         @auth
             <a href="{{ route('posts.create') }}" class="btn btn-success mb-3 float-right mr-5 mt-3">Create New Post</a>
              <a href="{{ route('api-data') }}" class=" mb-3 float-right mr-5 mt-3">Api Data Fetch</a>
@@ -17,8 +9,7 @@
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         @endauth
-
-        @if (session('success'))
+       @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
@@ -68,7 +59,7 @@
                                 </div>
                                 <div class="form-group">
                                     <select name="visibility" class="form-control w-50" id="visibility">
-                                        <option value="public">Visibility</option>
+                                        <option >Select Visibility</option>
                                         <option value="public">Public</option>
                                         <option value="private">Private</option>
                                     </select>
@@ -93,6 +84,4 @@
                 </div>
             @endforeach
         </div>
-    </div>
-</body>
-</html>
+@endsection

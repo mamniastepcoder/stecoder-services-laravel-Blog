@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-     
-    <div class="mt-4">
+@extends('layouts.app')
+@section('content')
+<div>
+  <div class="mt-4">
   <h1 class="text-center bg-info text-white p-2 ">API Data Fetch</h1> 
-        <table class="table table-bordered mt-4">
+   <a href="{{ route('posts') }}" class="btn btn-danger text-center text-white float-right">Back</a>
+        <table class="table table-bordered mt-5">
             <thead class="thead-dark">
                 <tr class="text-center text-success">
                     <th>Name</th>
@@ -33,8 +26,13 @@
                 @endforelse
             </tbody>
         </table>
-    </div>
+       @if($page > 1)
+    <a href="{{ route('api-data', array_merge(request()->all(), ['page' => $page - 1])) }}" class="btn btn-secondary">Previous</a>
+@endif
+<span>Page {{ $page }}</span>
+<a href="{{ route('api-data', array_merge(request()->all(), ['page' => $page + 1])) }}" class="btn btn-secondary">Next</a>
+ </div>
+ 
 </div>
 
-</body>
-</html>
+@endsection

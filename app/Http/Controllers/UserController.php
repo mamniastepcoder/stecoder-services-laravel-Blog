@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-
-
 class UserController extends Controller
 {
     public function register()
@@ -53,7 +51,6 @@ class UserController extends Controller
 
         return redirect()->back()->with('error', 'Invalid credentials');
     }
-
     public function logout(Request $request)
     {
         Auth::logout();

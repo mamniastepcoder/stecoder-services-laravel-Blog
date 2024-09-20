@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Post</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container w-50">
+@extends('layouts.app')
+@section('content')
+    <div class="w-50 mx-auto">
         <h1 class="mt-4 text-center p-3 mb-2 bg-info text-white">Create New Post</h1>
         <form action="{{route('posts.insert')}}" class="border border-warning border-3 mt-5 p-4"   method="POST"  >
             @csrf
@@ -36,5 +31,4 @@
              <a href="{{ route('posts') }}" class="btn btn-secondary">Back to Posts</a>
         </form>
     </div>
-</body>
-</html>
+@endsection

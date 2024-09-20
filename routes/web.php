@@ -4,10 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\ApiFetchController;
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\BookSearchController;
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,7 +29,7 @@ Route::delete('/posts/delete/{id}', [PostController::class, 'delete'])->name('po
 // Comment
 Route::post('posts/comments',[CommentController::class,'store'])->name('posts.comments');
 // api fetch data
-Route::get('api-data',[ApiFetchController::class,'index'])->name('api-data');
+Route::get('api-data',[ApiController::class,'index'])->name('api-data');
 Route::get('books-search', [BookController::class, 'search'])->name('books-search');
 
 
