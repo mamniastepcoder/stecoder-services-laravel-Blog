@@ -5,14 +5,12 @@ use Illuminate\Support\Facades\Http;
 
 class BookController extends Controller
 {
-
-   public function search(Request $request)
+public function search(Request $request)
 {
     $search = $request->input('search', '');
     $author = $request->input('author', '');
     $publish_date = $request->input('publish_date', '');
     $page = $request->input('page', 1);
-
     $books = [];
     $message = '';
     $query = [];
@@ -25,7 +23,6 @@ class BookController extends Controller
      if (!empty($publish_date)) {
          $query[] = $publish_date;
     }
-
     if (!empty($query)) {
         $response = Http::get('https://openlibrary.org/search.json', [
             'q' => implode(' AND ' , $query),
@@ -42,5 +39,4 @@ class BookController extends Controller
         }
     return view('api.booksearch', compact('books', 'search', 'page','message'));
 }
-
 }
