@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 <div>
@@ -8,7 +7,6 @@
         {{$message}}
     </div>
     @endif
-
     <form action="{{ route('books-search') }}" method="GET" class="mb-4">
         <div class="row">
             <div class="col mt-2">
@@ -28,8 +26,7 @@
         <a href="{{ route('books-search') }}" class="btn btn-secondary mt-3 ml-2">Reset Filter</a>
           <a href="{{ route('posts') }}" class="btn btn-danger text-center mt-3 text-white float-right">Back</a>
     </form>
-
-    @if (isset($books) && count($books) > 0)
+ @if (isset($books) && count($books) > 0)
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -56,15 +53,12 @@
                 @endforeach
             </tbody>
         </table>
-
-        <div class="pagination">
+    <div class="pagination">
             @if($page > 1)
                 <a href="{{ route('books-search', array_merge(request()->all(), ['page' => $page - 1])) }}" class="btn btn-secondary">Previous</a>
             @endif
-
-            <span class="ml-2">Page {{ $page }}</span>
-
-            <a href="{{ route('books-search', array_merge(request()->all(), ['page' => $page + 1])) }}" class="btn btn-secondary ml-2">Next</a>
+        <span class="ml-2">Page {{ $page }}</span>
+        <a href="{{ route('books-search', array_merge(request()->all(), ['page' => $page + 1])) }}" class="btn btn-secondary ml-2">Next</a>
         </div>
     @else
         <p>No Data Found</p>
